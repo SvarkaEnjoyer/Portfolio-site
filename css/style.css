@@ -2018,7 +2018,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Etude Noire;
-  src: url("https://cdn.prod.website-files.com/66fd122ec43c0a3b9b818914/6911bdaf8375e53af3eda5a3_Etude%20Noire.zip") format("undefined");
+  src: url("../fonts/Etude\ Noire\ Regular.ttf") format("undefined");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -2026,7 +2026,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Etude Noire;
-  src: url("https://cdn.prod.website-files.com/66fd122ec43c0a3b9b818914/6911bdaf8375e53af3eda5a3_Etude%20Noire.zip") format("undefined");
+  src: url("../fonts/Etude\ Noire\ Medium.ttf") format("undefined");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -2034,7 +2034,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: "Gg Sans 2";
-  src: url("https://cdn.prod.website-files.com/66fd122ec43c0a3b9b818914/696e0546e58ebafaee4d1269_gg-sans-2.zip") format("undefined");
+  src: url("../fonts/gg\ sans\ Regular.ttf") format("undefined");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -2042,7 +2042,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Miamanueva;
-  src: url("fonts/6927410bc438f7262325584a_miamanueva.otf") format("opentype");
+  src: url("../fonts/6927410bc438f7262325584a_miamanueva.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
