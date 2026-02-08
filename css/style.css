@@ -1,5 +1,20 @@
 :root {
-  color-scheme: light;
+  color-scheme: only light;
+}
+
+html, body {
+  /* Запрещает браузеру "улучшать" цвета */
+  forced-color-adjust: none; 
+  background-color: #76d3b6 !important;
+  color: #ffffff !important;
+}
+
+/* На случай, если браузер все равно применяет фильтр */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #76d3b6 !important;
+    filter: none !important;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
