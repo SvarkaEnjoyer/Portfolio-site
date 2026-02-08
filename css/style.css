@@ -1,3 +1,13 @@
+:root {
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #76d3b6 !important; /* Твой мятный фон */
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2073,8 +2083,29 @@ textarea.w-input, textarea.w-select {
 
 .spline-sect {
   margin-top: -75px;
-  height: 100%;
   width: 100%;
+  /* Убираем жесткую высоту 100%, чтобы блок подстраивался под контент или экран */
+  min-height: 300px; 
+  overflow: hidden;
+}
+
+.spline-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Центрирует содержимое, если оно вдруг меньше ширины */
+}
+
+/* Стили непосредственно для картинки внутри этих блоков */
+.spline-wrap img {
+  width: 100%;
+  height: 100%;
+  /* cover заставляет картинку заполнить весь блок. 
+     Лишнее обрежется, но пропорции сохранятся и дырок не будет */
+  object-fit: cover; 
+  /* Центрируем само изображение внутри области (чтобы лицо было посередине) */
+  object-position: center; 
+  display: block;
 }
 
 .porfolio-wrapper {
@@ -2529,11 +2560,6 @@ textarea.w-input, textarea.w-select {
   width: 12%;
   position: absolute;
   inset: auto 0% 0% auto;
-}
-
-.spline-wrap {
-  width: 100%;
-  height: 100%;
 }
 
 .spline {
