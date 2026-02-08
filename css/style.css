@@ -2098,10 +2098,10 @@ textarea.w-input, textarea.w-select {
 
 .spline-sect {
   /* На мобильных уменьшаем отрицательный отступ, чтобы картинка не уходила слишком глубоко */
-  margin-top: -30px; 
+  margin-top: -40px; 
   width: 100%;
   /* Задаем фиксированную высоту для мобилок, чтобы блок не был "ниточкой" */
-  height: 200px; 
+  height: 100%; 
   overflow: hidden;
   position: relative;
 }
@@ -2122,7 +2122,7 @@ textarea.w-input, textarea.w-select {
 @media (min-width: 768px) {
   .spline-sect {
     margin-top: -75px;
-    height: 400px; /* или ту высоту, которая тебе нравится на ПК */
+    height: 100%; /* или ту высоту, которая тебе нравится на ПК */
   }
 }
 
