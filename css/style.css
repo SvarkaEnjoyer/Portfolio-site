@@ -2097,30 +2097,33 @@ textarea.w-input, textarea.w-select {
 }
 
 .spline-sect {
-  margin-top: -75px;
+  /* На мобильных уменьшаем отрицательный отступ, чтобы картинка не уходила слишком глубоко */
+  margin-top: -30px; 
   width: 100%;
-  /* Убираем жесткую высоту 100%, чтобы блок подстраивался под контент или экран */
-  min-height: 300px; 
+  /* Задаем фиксированную высоту для мобилок, чтобы блок не был "ниточкой" */
+  height: 200px; 
   overflow: hidden;
+  position: relative;
 }
 
 .spline-wrap {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center; /* Центрирует содержимое, если оно вдруг меньше ширины */
 }
 
-/* Стили непосредственно для картинки внутри этих блоков */
 .spline-wrap img {
   width: 100%;
   height: 100%;
-  /* cover заставляет картинку заполнить весь блок. 
-     Лишнее обрежется, но пропорции сохранятся и дырок не будет */
-  object-fit: cover; 
-  /* Центрируем само изображение внутри области (чтобы лицо было посередине) */
-  object-position: center; 
-  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Для компьютеров возвращаем как было */
+@media (min-width: 768px) {
+  .spline-sect {
+    margin-top: -75px;
+    height: 400px; /* или ту высоту, которая тебе нравится на ПК */
+  }
 }
 
 .porfolio-wrapper {
