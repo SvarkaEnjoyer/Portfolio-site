@@ -1992,7 +1992,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Etude Noire;
-  src: url("../fonts/Etude\ Noire\ Regular.ttf") format("undefined");
+  src: url("../fonts/Etude\ Noire\ Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -2000,7 +2000,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: Etude Noire;
-  src: url("../fonts/Etude\ Noire\ Medium.ttf") format("undefined");
+  src: url("../fonts/Etude\ Noire\ Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -2008,7 +2008,7 @@ textarea.w-input, textarea.w-select {
 
 @font-face {
   font-family: "Gg Sans 2";
-  src: url("../fonts/gg\ sans\ Regular.ttf") format("undefined");
+  src: url("../fonts/gg\ sans\ Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
