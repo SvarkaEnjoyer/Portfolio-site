@@ -2708,6 +2708,7 @@ textarea.w-input, textarea.w-select {
   font-family: Noto Sans, sans-serif;
   font-weight: 400;
   display: block;
+  color: #333333;
 }
 
 .project-descr._2 {
