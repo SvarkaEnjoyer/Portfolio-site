@@ -3165,6 +3165,10 @@ textarea.w-input, textarea.w-select {
     margin-top: -32px;
   }
 
+  .spline-scene-5 {
+  height: 135vh;
+}
+
   .nav-menu {
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -3326,6 +3330,10 @@ textarea.w-input, textarea.w-select {
   .my {
     padding-bottom: 5px;
   }
+
+  .spline-scene-5 {
+  height: 135vh;
+}
 
   .button-nav {
     border-radius: 20px;
@@ -3571,6 +3579,10 @@ textarea.w-input, textarea.w-select {
   .porfilio-slider {
     padding-bottom: 70px;
   }
+
+  .spline-scene-5 {
+  height: 135vh;
+}
 
   .my {
     padding-bottom: 0;
