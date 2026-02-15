@@ -798,32 +798,37 @@
 
 
       <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Находим контейнер с анимацией по его уникальному ID или классу
-  const splineWrapper = document.querySelector('.lotus-spline');
+  window.addEventListener('DOMContentLoaded', () => {
+    const splineElement = document.querySelector('.lotus-spline spline-scene-5');
+    
+    if (splineElement) {
+      // 1. Ограничиваем разрешение (Pixel Ratio = 1)
+      // Это уберет рендеринг в 4K на твоем Samsung
+      const scale = 1; 
+      splineElement.style.width = '100%';
+      splineElement.style.height = '100%';
 
-  if (splineWrapper) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Когда пользователь видит анимацию — включаем её
-          splineWrapper.style.visibility = 'visible';
-          splineWrapper.style.pointerEvents = 'auto';
-          // Если Webflow/Spline поставил рендер на паузу, это его разбудит
-        } else {
-          // Когда анимация скрыта — полностью выключаем отрисовку для GPU
-          splineWrapper.style.visibility = 'hidden';
-          splineWrapper.style.pointerEvents = 'none';
-        }
-      });
-    }, { 
-      // Начинаем загрузку чуть раньше (за 200px до появления), чтобы не было резкого скачка
-      rootMargin: '200px' 
-    });
+      // 2. Вмешиваемся в контекст WebGL (если возможно)
+      const gl = splineElement.getContext('webgl') || splineElement.getContext('experimental-webgl');
+      if (gl) {
+        // Отключаем антиалиасинг (сглаживание) для экономии ресурсов GPU
+        gl.getContextAttributes().antialias = false;
+      }
+    }
+  });
 
-    observer.observe(splineWrapper);
+  // 3. Лимит кадров (FPS Limit)
+  // Мы заставляем браузер не разгоняться выше 30 кадров в секунду
+  let lastFrameTime = 0;
+  function limitFPS(time) {
+    if (time - lastFrameTime < 33) { // ~30 FPS (1000ms / 33)
+      requestAnimationFrame(limitFPS);
+      return;
+    }
+    lastFrameTime = time;
+    requestAnimationFrame(limitFPS);
   }
-});
+  requestAnimationFrame(limitFPS);
 </script>
       
    </body>
