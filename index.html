@@ -793,5 +793,38 @@
            });
          });
       </script>
+
+
+
+
+      <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Находим контейнер с анимацией по его уникальному ID или классу
+  const splineWrapper = document.querySelector('.lotus-spline');
+
+  if (splineWrapper) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Когда пользователь видит анимацию — включаем её
+          splineWrapper.style.visibility = 'visible';
+          splineWrapper.style.pointerEvents = 'auto';
+          // Если Webflow/Spline поставил рендер на паузу, это его разбудит
+        } else {
+          // Когда анимация скрыта — полностью выключаем отрисовку для GPU
+          splineWrapper.style.visibility = 'hidden';
+          splineWrapper.style.pointerEvents = 'none';
+        }
+      });
+    }, { 
+      // Начинаем загрузку чуть раньше (за 200px до появления), чтобы не было резкого скачка
+      rootMargin: '200px' 
+    });
+
+    observer.observe(splineWrapper);
+  }
+});
+</script>
+      
    </body>
 </html>
