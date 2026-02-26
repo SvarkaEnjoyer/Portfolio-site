@@ -3788,17 +3788,3 @@ textarea.w-input, textarea.w-select {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
-
-/* Скрываем для всех браузеров */
-.hide-scrollbar {
-    /* Для Firefox */
-    scrollbar-width: none; 
-    
-    /* Для Internet Explorer и старой Edge */
-    -ms-overflow-style: none; 
-}
-
-/* Для Chrome, Safari и новых версий Edge (движок WebKit) */
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
-}
