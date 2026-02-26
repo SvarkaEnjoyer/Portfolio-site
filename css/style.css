@@ -2,6 +2,26 @@
   color-scheme: only light;
 }
 
+html, body {
+  /* Запрещает браузеру "улучшать" цвета */
+  forced-color-adjust: none; 
+  background-color: #76d3b6 !important;
+  color: #ffffff !important;
+}
+
+/* На случай, если браузер все равно применяет фильтр */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #76d3b6 !important;
+    filter: none !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #76d3b6 !important; /* Твой мятный фон */
+  }
+}
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -2061,6 +2081,7 @@ textarea.w-input, textarea.w-select {
 
 .body {
   background-color: #fff0;
+  background-image: linear-gradient(#60dec5, #11532e);
 }
 
 .porfilio-slider {
@@ -2887,6 +2908,21 @@ textarea.w-input, textarea.w-select {
   display: none;
 }
 
+.navbar-back {
+  z-index: 999999999;
+  -webkit-backdrop-filter: saturate(200%) blur(4px);
+  backdrop-filter: saturate(200%) blur(4px);
+  mix-blend-mode: luminosity;
+  background-color: #ddd0;
+  background-image: linear-gradient(#deffea80, #deffea80);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 0;
+  box-shadow: inset 0 6px 10px 7px #c9b6b680, 0 2px 5px #0003;
+}
 
 .div-block-18 {
   z-index: 2;
@@ -3462,31 +3498,15 @@ textarea.w-input, textarea.w-select {
     display: flex;
   }
 
-.navbar-back {
-  z-index: 999999999;
-  -webkit-backdrop-filter: saturate(200%) blur(4px);
-  backdrop-filter: saturate(200%) blur(4px);
-  mix-blend-mode: luminosity;
-  background-color: #ddd0;
-  background-image: linear-gradient(#deffea80, #deffea80);
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  display: block;
-  position: fixed;
-  top: 0;
-  box-shadow: inset 0 6px 10px 7px #c9b6b680, 0 2px 5px #0003;
-}
-  
   .navbar-back {
     z-index: 999;
     -webkit-backdrop-filter: blur(4px) blur(4px);
     backdrop-filter: blur(4px) blur(4px);
-    height: 30vh;
+    height: 28vh;
     padding-top: 10px;
     padding-bottom: 20px;
     display: block;
-    top: 50px;
+    top: 67px;
     box-shadow: 0 2px 5px #0003;
   }
 
