@@ -2156,11 +2156,6 @@ textarea.w-input, textarea.w-select {
   position: relative;
 }
 
-@media screen and (max-width: 991px) {
-  .div-block-12 {
-    height: 50px;
-}
-
 .write-me-btn {
   z-index: 999999999;
   grid-column-gap: 20px;
