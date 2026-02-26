@@ -2099,7 +2099,6 @@ textarea.w-input, textarea.w-select {
   width: 100%;
   height: auto; /* Высота подстроится под размер картинки */
   overflow: hidden;
-  margin-top: -30px; /* Небольшой нахлест для мобильных */
 }
 
 .spline-img {
