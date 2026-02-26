@@ -2177,9 +2177,15 @@ textarea.w-input, textarea.w-select {
 .div-block-12 {
   z-index: 998;
   background-color: #dde4df;
-  height: 60px;
+  height: 67px;
   position: relative;
 }
+
+@media screen and (max-width: 991px) {
+  .div-block-12 {
+    height: 50px
+  }
+
 
 .write-me-btn {
   z-index: 999999999;
