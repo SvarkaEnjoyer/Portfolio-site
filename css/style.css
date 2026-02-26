@@ -2097,32 +2097,29 @@ textarea.w-input, textarea.w-select {
 }
 
 .spline-sect {
-  /* На мобильных уменьшаем отрицательный отступ, чтобы картинка не уходила слишком глубоко */
-  margin-top: -40px; 
+  margin-top: -30px; /* Оставляем небольшой заезд под шапку */
   width: 100%;
-  /* Задаем фиксированную высоту для мобилок, чтобы блок не был "ниточкой" */
-  height: 100%; 
+  height: auto; /* Важно: высота теперь зависит от контента */
   overflow: hidden;
-  position: relative;
+  display: block;
 }
 
 .spline-wrap {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .spline-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  width: 100%;     /* Растягиваем на всю ширину */
+  height: auto;    /* Высота масштабируется сама, без обрезки! */
+  display: block;  /* Убирает лишние отступы снизу */
+  object-fit: contain; /* Картинка всегда видна полностью */
 }
 
-/* Для компьютеров возвращаем как было */
+/* Для компьютеров, чтобы шапка не была слишком огромной */
 @media (min-width: 768px) {
   .spline-sect {
     margin-top: -75px;
-    height: 100%; /* или ту высоту, которая тебе нравится на ПК */
   }
 }
 
