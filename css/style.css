@@ -3788,3 +3788,26 @@ textarea.w-input, textarea.w-select {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
+
+<style>
+/* По умолчанию видео скрыто */
+.lotus-video-mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* На планшетах и телефонах (до 991px — стандарт Webflow) */
+@media screen and (max-width: 991px) {
+  /* Скрываем Spline */
+  .lotus-spline {
+    display: none !important;
+  }
+  
+  /* Показываем видео */
+  .lotus-video-mobile {
+    display: block !important;
+  }
+}
+</style>
