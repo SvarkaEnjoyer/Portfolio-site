@@ -3790,24 +3790,35 @@ textarea.w-input, textarea.w-select {
 }
 
 <style>
-/* По умолчанию видео скрыто */
+/* Базовые настройки для видео-заглушки */
 .lotus-video-mobile {
-  display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: none; /* По умолчанию скрыто на ПК */
+  width: 100%;    /* Растягиваться только на ширину родителя */
+  max-width: 100vw; /* Не шире экрана телефона */
+  height: auto;   /* Пропорциональная высота */
+  object-fit: contain; /* Чтобы цветок не обрезался */
+  margin: 0 auto;
 }
 
-/* На планшетах и телефонах (до 991px — стандарт Webflow) */
+/* Настройки для мобильных устройств (планшеты и ниже) */
 @media screen and (max-width: 991px) {
-  /* Скрываем Spline */
-  .lotus-spline {
+  /* Полностью скрываем Spline-контейнер */
+  .spline-div, .lotus-spline, .wrap-spline-div {
     display: none !important;
+    visibility: hidden;
+    height: 0;
   }
   
   /* Показываем видео */
   .lotus-video-mobile {
     display: block !important;
+  }
+}
+
+/* Настройки для компьютеров (выше 991px) */
+@media screen and (min-width: 992px) {
+  .lotus-video-mobile {
+    display: none !important; /* Гарантированно убираем видео на ПК */
   }
 }
 </style>
