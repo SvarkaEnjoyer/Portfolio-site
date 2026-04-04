@@ -3790,36 +3790,59 @@ textarea.w-input, textarea.w-select {
 }
 
 <style>
-/* Скрываем видео на ПК */
+/* 1. КОМПЬЮТЕРЫ (скрываем видео полностью) */
 @media screen and (min-width: 992px) {
   .lotus-video-mobile {
     display: none !important;
   }
+  .lotus-spline {
+    display: block !important;
+  }
 }
 
-/* Настройки для телефонов и планшетов */
+/* 2. ВСЕ МОБИЛЬНЫЕ (от планшета до телефона) */
 @media screen and (max-width: 991px) {
-  /* Прячем тяжелый Spline */
-  .lotus-spline, .wrap-spline-div canvas {
+  /* Прячем Spline, чтобы не грел телефон */
+  .lotus-spline, .wrap-spline-div canvas, [data-animation-type="spline"] {
     display: none !important;
+    height: 0 !important;
   }
 
-  /* Настраиваем видео */
   .lotus-video-mobile {
     display: block !important;
-    width: 100% !important;     /* Растянуть на всю ширину родителя */
-    max-width: 100% !important; /* Запретить выходить за пределы экрана */
-    height: auto !important;    /* Пропорционально сжать высоту */
-    object-fit: contain !important; 
-    margin: 0 !important;
-    padding: 0 !important;
+    width: 100% !important;
+    /* Устанавливаем высоту 135% от высоты экрана */
+    height: 135vh !important; 
+    /* Магия: видео заполняет высоту, обрезаясь по бокам */
+    object-fit: cover !important; 
+    /* Поднимаем видео вверх */
+    margin-top: -109px !important;
+    /* Центрируем содержимое видео */
+    object-position: center;
   }
 
-  /* Сбрасываем ограничения родительского контейнера (Grid из Webflow) */
+  /* Убираем ограничения контейнеров Webflow */
   .wrap-spline-div, .spline-div {
-    display: block !important; /* Отключаем Grid, чтобы он не мешал */
+    display: block !important;
     width: 100% !important;
-    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/* 3. СПЕЦИФИКА ДЛЯ ТЕЛЕФОНОВ (Брейкпоинт 479px и ниже) */
+@media screen and (max-width: 479px) {
+  .lotus-video-mobile {
+    /* Если на маленьких телефонах 135vh слишком много, можно подправить тут */
+    height: 135vh !important;
+  }
+}
+
+/* 4. ГОРИЗОНТАЛЬНЫЙ ТЕЛЕФОН (Landscape) */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .lotus-video-mobile {
+    height: 180vh !important; /* Увеличиваем высоту, чтобы перекрыть низкий экран */
+    margin-top: -50px !important;
   }
 }
 </style>
