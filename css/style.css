@@ -3790,44 +3790,60 @@ textarea.w-input, textarea.w-select {
 }
 
 <style>
-/* 1. Глобальное правило: ПРЯЧЕМ ВИДЕО ВЕЗДЕ ПО УМОЛЧАНИЮ */
+/* 0. ЗАЩИТНЫЙ ЗАМОК: Скрываем видео везде по умолчанию */
 .lotus-video-mobile {
   display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  width: 0 !important;
-  overflow: hidden !important;
 }
 
-/* 2. ПРАВИЛО ДЛЯ МОБИЛЬНЫХ (от 0 до 991px) */
+/* 1. КОМПЬЮТЕРЫ (Явно подтверждаем скрытие и показываем 3D) */
+@media screen and (min-width: 992px) {
+  .lotus-video-mobile {
+    display: none !important;
+  }
+  .lotus-spline {
+    display: block !important;
+  }
+}
+
+/* 2. ВСЕ МОБИЛЬНЫЕ (от планшета 991px и ниже) */
 @media screen and (max-width: 991px) {
-  /* Скрываем Spline */
+  /* Прячем Spline полностью */
   .lotus-spline, .wrap-spline-div canvas, [data-animation-type="spline"] {
     display: none !important;
-    visibility: hidden !important;
+    height: 0 !important;
   }
 
-  /* Показываем видео и возвращаем ему размеры */
+  /* ВКЛЮЧАЕМ ВИДЕО и возвращаем твои настройки позиционирования */
   .lotus-video-mobile {
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    width: 100% !important;
+    height: 135vh !important; 
+    object-fit: cover !important; 
+    margin-top: -109px !important;
+    object-position: center;
+  }
+
+  /* Убираем ограничения контейнеров Webflow */
+  .wrap-spline-div, .spline-div {
+    display: block !important;
     width: 100% !important;
     height: auto !important;
     overflow: visible !important;
   }
 }
 
-/* 3. ДОПОЛНИТЕЛЬНАЯ СТРАХОВКА ДЛЯ БОЛЬШИХ ЭКРАНОВ (свыше 991px) */
-@media screen and (min-width: 992px) {
+/* 3. ТЕЛЕФОНЫ (479px и ниже) — сохраняем твой масштаб */
+@media screen and (max-width: 479px) {
   .lotus-video-mobile {
-    /* Еще раз принудительно скрываем, если вдруг что-то его включает */
-    display: none !important;
+    height: 135vh !important;
   }
-  
-  .lotus-spline {
-    display: block !important; /* Убеждаемся, что Spline виден на ПК */
+}
+
+/* 4. ГОРИЗОНТАЛЬНЫЙ ТЕЛЕФОН (Landscape) — сохраняем твою логику */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .lotus-video-mobile {
+    height: 180vh !important;
+    margin-top: -50px !important;
   }
 }
 </style>
