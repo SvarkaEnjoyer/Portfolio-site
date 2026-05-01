@@ -2943,22 +2943,6 @@ textarea.w-input, textarea.w-select {
   margin-top: 30px;
 }
 
-.hello {
-  color: #fcfcfc;
-  white-space: nowrap;
-  font-family: Noto Sans, sans-serif;
-  font-size: 20px;
-  overflow: hidden;
-}
-
-.stripe {
-  color: #fcfcfc;
-  background-color: #fff;
-  width: 1px;
-  height: 25px;
-  font-family: Noto Sans, sans-serif;
-  font-size: 20px;
-}
 
 .figma-btn {
   z-index: 999999999;
