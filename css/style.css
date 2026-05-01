@@ -2476,19 +2476,6 @@ textarea.w-input, textarea.w-select {
   inset: auto 0% -62%;
 }
 
-.preload {
-  z-index: 2147483647;
-  background-image: linear-gradient(#0006, #0006), url("../images/697251eca3dd5e24095110be_preloader.jpg");
-  background-position: 0 0, 50%;
-  background-size: auto, cover;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  display: none;
-  position: fixed;
-  inset: 0%;
-}
 
 .page-speed-insights {
   background-color: #fff;
